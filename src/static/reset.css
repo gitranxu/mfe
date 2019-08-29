@@ -1,0 +1,68 @@
+html, body, div, span, applet, object, iframe,p,
+blockquote, pre, a, abbr, acronym, address, big,
+cite, code, del, dfn, em, font, img,
+ins, kbd, q, s, samp, small, strike,
+strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+center, u, b, i {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    font-family:"Microsoft YaHei","Microsoft YaHei";
+    vertical-align: baseline;
+	box-sizing: border-box;
+}
+a{
+	text-decoration: none;
+}
+html,body{
+	height: 100%;
+	font-size: 12px;
+    font-family: tahoma, arial, sans-sarif, "Microsoft YaHei";
+}
+:focus {
+    outline: 0
+}
+ol, ul {
+    list-style: none
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: ""
+}
+blockquote, q {
+    quotes: ""
+}
+input, textarea {
+    margin: 0;
+    padding: 0
+}
+::-webkit-scrollbar {
+    /* width: 5px;
+    height: 5px; */
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #a1a3a9;
+    border-radius: 3px;
+  }
+
+.el-message-box .el-message-box__btns{
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+.el-message-box .el-message-box__btns button:nth-child(1){
+    margin-left: 10px;
+}
+/*解决element-ui的table组件，在google浏览器下border错位*/
+body .el-table th.gutter{
+    display: table-cell!important;
+}
