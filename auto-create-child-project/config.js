@@ -6,6 +6,5 @@ module.exports = {
     isProjectClosed: function(projectName) {
         return closedProjectList.includes(projectName);
     },
-    childProjectPrefix,
-    baseProjectName
+    childProjectPrefix
 }

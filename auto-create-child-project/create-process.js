@@ -1,8 +1,9 @@
 //开始创建新子项目
 let fs = require('fs');
+let util = require('./util.js');
 let projectName = '';
 function createProject(opt) {
-    projectName = opt.projectName;
+    projectName = util.getProjectNameRegExp().exec(opt.projectName)[1];;
     fs.mkdir(`${opt.projectRootPath}`, function(error) {
         console.log('opt', opt)
         copy(`${__dirname}/child-project-template`, opt.projectRootPath);
