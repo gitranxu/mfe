@@ -98,7 +98,7 @@ module.exports = {
 		    from: path.resolve(__dirname, '../src/static/favicon.ico'),
             to: path.resolve(__dirname, '../'+dist+'/static/'),
 		}]),
-        // new CopyWebpackPlugin([{
+        //  new CopyWebpackPlugin([{
 		//     from: path.resolve(__dirname, '../gmoa-base/src/lib/lower-browser-help'),
         //     to: path.resolve(__dirname, '../'+dist+'/static/js/lower-browser-help'),
         // }]),
@@ -106,15 +106,26 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue'],
         alias: {
-          'vue': 'vue/dist/vue.esm.js',
-          '@': path.resolve(__dirname, '../src'),
-          'sub': '@/sub-projects/',
-          'api': '@/api/',
-          'components': '@/components/',
-          'consts': '@/consts/',
-          'pages': '@/pages/',
-          'utils': '@/utils/',
-          'static': '@/static/'
+            'vue': 'vue/dist/vue.esm.js',
+            '@': path.resolve(__dirname, '../src'),
+            'sub': '@/sub-projects/',
+            'api': '@/api/',
+            'components': '@/components/',
+            'consts': '@/consts/',
+            'pages': '@/pages/',
+            'utils': '@/utils/',
+            'static': '@/static/',
+                                   //这行注释不要动1(webpack)start
+ 
+            '@hahei': 'sub/hahei/src/',
+            'hahei-api': '@hahei/api/',
+            'hahei-components': '@hahei/components/',
+            'hahei-pages': '@hahei/pages/',
+            'hahei-static': '@hahei/static/',
+            'hahei-utils': '@hahei/utils/',
+            'hahei-consts': '@hahei/consts/',
+        
+ //这行注释不要动1(webpack)end                       
         }
     }
 };

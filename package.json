@@ -7,7 +7,9 @@
       "start": "webpack-dev-server --hot --open --config build/webpack.dev.conf.js",
       "build300": "webpack --config build/webpack.prod.conf.js --300",
       "build500": "webpack --config build/webpack.prod.conf.js --500",
-      "build800": "webpack --config build/webpack.prod.conf.js --800"
+      "build800": "webpack --config build/webpack.prod.conf.js --800",
+      "update": "node auto-create-child-project/update.js",
+      "create": "node auto-create-child-project/create.js"
     },
     "author": "ranxu",
     "license": "ISC",
