@@ -26,9 +26,6 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-//如果有必要引用基础项目vars.less的话,这里是个例子,只能使用相对路径,还没有找到更好的办法
-//子项目可以设置自己的统一的vars.less
-@import "../../../../gmoa-base/src/utils/vars.less";
 .[[projectName]]-base{
     background: @white2;
     padding: 20px;

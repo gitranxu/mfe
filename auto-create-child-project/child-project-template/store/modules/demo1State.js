@@ -5,10 +5,10 @@ export default {
     },
     mutations: {
         updateCurrentSiteState(state, payload) {
-            state.gopCurrentSite = Object.assign({}, state.gopCurrentSite, payload);
+            state.[[projectName]]CurrentSite = Object.assign({}, state.[[projectName]]CurrentSite, payload);
         },
         updateModeState(state, payload) {
-            state.gopMode = payload;
+            state.[[projectName]]Mode = payload;
         },
     },
     actions: {

@@ -4,15 +4,15 @@ export default {
     children: [
         {
             path: '/demo-start',
-            component: resolve => require(['gop-utils/standard'], resolve)
+            component: resolve => require(['[[projectName]]-utils/standard'], resolve)
         },
         {
             path: '/demo-base',
-            component: resolve => require(['gop-pages/demo/base'], resolve)
+            component: resolve => require(['[[projectName]]-pages/demo/base'], resolve)
         },
         {
             path: '/demo-vuex',
-            component: resolve => require(['gop-pages/demo/vuex'], resolve)
+            component: resolve => require(['[[projectName]]-pages/demo/vuex'], resolve)
         },
     ]
 };

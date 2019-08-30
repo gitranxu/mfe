@@ -4,13 +4,13 @@ export default {
     children: [
         // {
         //     path: '/aaa',
-        //     component: resolve => require(['gop-utils/standard'], resolve)
+        //     component: resolve => require(['[[projectName]]-utils/standard'], resolve)
         // },
     ],
     siblings: [
         // {
         //     path: '/bbb',
-        //     component: resolve => require(['gop-utils/standard'], resolve)
+        //     component: resolve => require(['[[projectName]]-utils/standard'], resolve)
         // },
     ]
 };
