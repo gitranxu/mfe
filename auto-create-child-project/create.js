@@ -5,7 +5,7 @@ let fs = require('fs');
 const path = require('path');
 let util = require('./util.js');
 let config = require('./config.js');
-let projectName = process.argv[process.argv.length - 1]; //jsy-portal
+let projectName = process.argv[process.argv.length - 1]; //yc-portal
 console.log('projectName---', projectName);
 let isProjectNameMatch = util.getProjectNameRegExp().test(projectName);
 if(!isProjectNameMatch) {
@@ -14,8 +14,8 @@ if(!isProjectNameMatch) {
 }
 let projectNameNoPrefix = util.getProjectNameRegExp().exec(projectName)[1];
 let projectCreatePath = path.resolve(__dirname, '../src/sub-projects/');
-let projectRootPath = projectCreatePath + '/' + projectName; // sub-projects/jsy-haha
-let projectSrcPath = projectRootPath + '/src';  // sub-projects/jsy-haha/src
+let projectRootPath = projectCreatePath + '/' + projectName; // sub-projects/yc-haha
+let projectSrcPath = projectRootPath + '/src';  // sub-projects/yc-haha/src
 
 //console.log('aaaaaaa', path.resolve(__dirname));
 let createProcessObj = require('./create-process.js');

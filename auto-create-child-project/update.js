@@ -31,9 +31,9 @@ util.replaceFile({
 });
 
 function getWebpackInsertContent() {
-    return util.subProjectNamesLoop(projectNameNoPrefix => {
+    return util.subProjectNamesLoop((projectNameNoPrefix, subProjectName) => {
         return `
-            '@${projectNameNoPrefix}': 'sub/${projectNameNoPrefix}/src/',
+            '@${projectNameNoPrefix}': 'sub/${subProjectName}/src/',
             '${projectNameNoPrefix}-api': '@${projectNameNoPrefix}/api/',
             '${projectNameNoPrefix}-components': '@${projectNameNoPrefix}/components/',
             '${projectNameNoPrefix}-pages': '@${projectNameNoPrefix}/pages/',
@@ -47,7 +47,7 @@ function getWebpackInsertContent() {
 function getRouterInsertContent() {
     return util.subProjectNamesLoop(projectNameNoPrefix => {
         return `
-import ${projectNameNoPrefix}ProjectRoutes from 'sub/${projectNameNoPrefix}/src/router';
+import ${projectNameNoPrefix}ProjectRoutes from '@${projectNameNoPrefix}/router';
 translate.translateRouter('${projectNameNoPrefix}', ${projectNameNoPrefix}ProjectRoutes);
 children = children.concat(${projectNameNoPrefix}ProjectRoutes.children || []);
 siblings = siblings.concat(${projectNameNoPrefix}ProjectRoutes.siblings || []);

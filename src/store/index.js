@@ -5,8 +5,7 @@ import userState from './modules/userState'
 import translate from '@/../auto-create-child-project/translate';
                //这行注释不要动1(store)start
  
-import haheiState from '@hahei/store';
-translate.translateStore('hahei', haheiState);
+
         
  //这行注释不要动1(store)end               
 const store = new Vuex.Store({
@@ -17,7 +16,6 @@ const store = new Vuex.Store({
         userState,
                        //这行注释不要动2(store)start
  
-        ...haheiState,
  //这行注释不要动2(store)end               
     },
 })

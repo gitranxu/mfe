@@ -54,7 +54,7 @@ function subProjectNamesLoop(fn) {
         .forEach(subProjectName => {
             let projectNameNoPrefix = getProjectNameRegExp().exec(subProjectName)[1];
             if(!config.isProjectClosed(subProjectName)) {
-                result += fn(projectNameNoPrefix);
+                result += fn(projectNameNoPrefix, subProjectName);
             }
         });
     return result;

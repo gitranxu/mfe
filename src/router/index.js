@@ -12,10 +12,6 @@ siblings = siblings.concat(baseRoutes.siblings || []);
 import translate from '@/../auto-create-child-project/translate';
                    //这行注释不要动(router)start
  
-import haheiProjectRoutes from 'sub/hahei/src/router';
-translate.translateRouter('hahei', haheiProjectRoutes);
-children = children.concat(haheiProjectRoutes.children || []);
-siblings = siblings.concat(haheiProjectRoutes.siblings || []);
         
  //这行注释不要动(router)end                   
 

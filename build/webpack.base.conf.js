@@ -117,13 +117,6 @@ module.exports = {
             'static': '@/static/',
                                    //这行注释不要动1(webpack)start
  
-            '@hahei': 'sub/hahei/src/',
-            'hahei-api': '@hahei/api/',
-            'hahei-components': '@hahei/components/',
-            'hahei-pages': '@hahei/pages/',
-            'hahei-static': '@hahei/static/',
-            'hahei-utils': '@hahei/utils/',
-            'hahei-consts': '@hahei/consts/',
         
  //这行注释不要动1(webpack)end                       
         }
