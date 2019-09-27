@@ -52,7 +52,11 @@ function subProjectNamesLoop(fn) {
     let result = '';
     fs.readdirSync(`${__dirname}/../src/sub-projects`)
         .forEach(subProjectName => {
-            let projectNameNoPrefix = getProjectNameRegExp().exec(subProjectName)[1];
+            let regRes = getProjectNameRegExp().exec(subProjectName);
+            if(!regRes) {
+                return;
+            }
+            let projectNameNoPrefix = regRes[1];
             if(!config.isProjectClosed(subProjectName)) {
                 result += fn(projectNameNoPrefix, subProjectName);
             }
