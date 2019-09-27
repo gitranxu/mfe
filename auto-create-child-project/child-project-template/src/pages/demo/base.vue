@@ -3,11 +3,11 @@
         <h1 class="h1">基本功能演示</h1>
         <div>
             <span>引用本项目图片</span>
-            <img :src="require('[[projectName]]-images/404.png')" class="img">
+            <img :src="require('[[projectName]]-static/404.png')" class="img">
         </div>
         <div>
             <span>引用基础项目图片</span>
-            <img :src="require('images/logo.png')" class="img">
+            <img :src="require('static/500.png')" class="img">
         </div>
         <div>
             <span>使用基础项目方法得到的uuid</span><br>
@@ -20,14 +20,14 @@
 export default {
     data() {
         return {
-            uuid: this.gm_uuid()
+            uuid: 123,//this.gm_uuid()
         }
     }
 }
 </script>
 <style lang="less" scoped>
 .[[projectName]]-base{
-    background: @white2;
+    background: skyblue;
     padding: 20px;
     .h1{
         color: #abcd23;

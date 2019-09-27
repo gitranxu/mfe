@@ -10,10 +10,10 @@ children = children.concat(baseRoutes.children || []);
 siblings = siblings.concat(baseRoutes.siblings || []);   
 
 import translate from '@/../auto-create-child-project/translate';
-                   //这行注释不要动(router)start
+                    //这行注释不要动(router)start
  
         
- //这行注释不要动(router)end                   
+ //这行注释不要动(router)end                    
 
 routes = routes.concat([{path: '/',component: home,children: children}])
                 .concat(siblings)

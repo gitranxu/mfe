@@ -115,10 +115,11 @@ module.exports = {
             'pages': '@/pages/',
             'utils': '@/utils/',
             'static': '@/static/',
-                                   //这行注释不要动1(webpack)start
+                                    //这行注释不要动1(webpack)start
  
+  
         
- //这行注释不要动1(webpack)end                       
+ //这行注释不要动1(webpack)end                        
         }
     }
 };
