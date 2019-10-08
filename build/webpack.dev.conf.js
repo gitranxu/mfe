@@ -16,6 +16,7 @@ let dist = 'dist';
 module.exports = merge(common, {
     devtool: 'inline-source-map',
     devServer: {
+        historyApiFallback: true,
         contentBase: path.resolve(__dirname, '../'+dist),
         host:'localhost',
         port:"8080",

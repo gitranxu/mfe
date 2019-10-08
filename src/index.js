@@ -4,9 +4,14 @@ import App from './app';
 import 'static/reset.css';
 import 'static/common.css';
 
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-Vue.use(ElementUI);
+// import ElementUI from 'element-ui';
+// import 'element-ui/lib/theme-chalk/index.css';
+// Vue.use(ElementUI);
+
+import { Button, Icon, Menu } from 'ant-design-vue';
+Vue.use(Button);
+Vue.use(Icon);
+Vue.use(Menu);
 
 Vue.use(Router);
 
