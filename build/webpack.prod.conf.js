@@ -2,10 +2,12 @@ const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.base.conf.js');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 let args = process.argv;
 let runEnv;
 if(args.indexOf('--300') != -1) {
@@ -40,7 +42,8 @@ const config = merge(common, {
             sourceMap: true // set to true if you want JS source maps
           }),
           // 压缩css
-          new OptimizeCSSAssetsPlugin({})
+          new OptimizeCSSAssetsPlugin({}),
+          //new BundleAnalyzerPlugin()
         ]
     },
     module: {
@@ -54,7 +57,7 @@ const config = merge(common, {
                     options: {
                       // you can specify a publicPath here
                       // by default it use publicPath in webpackOptions.output
-                      publicPath: '../'
+                      publicPath: '../../' //主要用于css中background: url中路径调整
                     }
                   },
                   'css-loader',
@@ -69,7 +72,7 @@ const config = merge(common, {
                     options: {
                       // you can specify a publicPath here
                       // by default it use publicPath in webpackOptions.output
-                      publicPath: '../'
+                      publicPath: '../../' //主要用于css中background: url中路径调整
                     }
                   },
                   'css-loader',
@@ -80,22 +83,21 @@ const config = merge(common, {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin([dist+'/*'], {
-            root: path.resolve(__dirname, '../')
-        }),
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'static/css/[name].[hash:8].css',
             chunkFilename: 'static/css/[id].[hash:8].css'
         }),
         new webpack.DefinePlugin({
 			runEnv: JSON.stringify(runEnv)
-        }),
+        })
     ],
-    //devtool: 'cheap-module-eval-source-map',
+    devtool: 'source-map',
     mode: 'production',
     output: {
         filename: 'static/js/[name].[contenthash:8].js',
         path: path.resolve(__dirname, '../'+dist),
+        publicPath: '/'
     }
 });
 module.exports = config;

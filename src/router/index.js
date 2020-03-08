@@ -1,24 +1,30 @@
 import Router from "vue-router";
-let routes = [],
-    children = [],
-    siblings = [];
-import home from 'pages/home';
+import home from "pages/home";
 
-//基础项目相关路由
-import baseRoutes from './base';
+let routes = [];
+let children = [];
+let siblings = [];
+
+// 基础项目相关路由
+import baseRoutes from "./base";
+
 children = children.concat(baseRoutes.children || []);
-siblings = siblings.concat(baseRoutes.siblings || []);   
+siblings = siblings.concat(baseRoutes.siblings || []);
 
-import translate from '@/../auto-create-child-project/translate';
+/* eslint-disable spaced-comment, no-trailing-spaces, indent,no-unused-vars,
+import/no-unresolved,import/first,import/order    */
+import translate from "utils/translate";
                     //这行注释不要动(router)start
  
         
- //这行注释不要动(router)end                    
-
-routes = routes.concat([{path: '/',component: home,children: children}])
-                .concat(siblings)
-                .concat([{path: '*',component: resolve => require(['pages/404'], resolve)}]);
-console.log('routes', routes);
+//这行注释不要动(router)end                    
+/* eslint-enable spaced-comment, no-trailing-spaces, indent,no-unused-vars,
+import/no-unresolved,import/first,import/order   */
+routes = routes.concat([{ path: "/", component: home, children }])
+    .concat(siblings)
+    .concat([{ path: "*", component: resolve => require(["pages/404"], resolve) }]);
+console.log("routes", routes);
 export default new Router({
-    routes: routes
-})
+    mode: "history",
+    routes,
+});

@@ -18,7 +18,7 @@ if(args.indexOf('--300') != -1) {
 
 let dist = 'dist';
 module.exports = {
-    entry: `${__dirname}/../src/index.js`,
+    entry: ["@babel/polyfill", `${__dirname}/../src/index.js`],
     module: {
         rules: [
             // {
@@ -41,9 +41,21 @@ module.exports = {
                 }
             },
             {
+                enforce: 'pre',
+                test: /\.(js|vue)$/,
+                exclude: /node_modules/,
+                loader: 'eslint-loader',
+                include: [ path.resolve(__dirname, '../src') ], // 指定检查的目录
+                options: { // 这里的配置项参数将会被传递到 eslint 的 CLIEngine 
+                    formatter: require('eslint-friendly-formatter') // 指定错误报告的格式规范
+                }
+            },
+            {
                 test: /\.js$/,
                 //把对.js 的文件处理交给id为happyBabel 的HappyPack 的实例执行
                 loader: 'babel-loader',
+                include: [ path.resolve(__dirname, '../src'), 
+                    path.resolve(__dirname, '../node_modules/ismobilejs/esm/isMobile') ],
                 //排除node_modules 目录下的文件
                 exclude: /node_modules/
             },
@@ -67,15 +79,12 @@ module.exports = {
             }
         ],
     },
-    // externals: {
-    //     'vue': 'Vue',
-    //     'vue-grid-layout': 'VueGridLayout',
-    //     'vuex': 'Vuex',
-    //     'vue-router': 'VueRouter',
-    //     'axios': 'axios',
-    //     'element-ui': 'ELEMENT',
-    //     'echarts': 'echarts',
-    // },
+    externals: {
+        'vue': 'Vue',
+        'vuex': 'Vuex',
+        'vue-router': 'VueRouter',
+        'axios': 'axios',
+    },
     plugins: [
         new webpack.HashedModuleIdsPlugin(),
         new VueLoaderPlugin(),
@@ -115,11 +124,9 @@ module.exports = {
             'pages': '@/pages/',
             'utils': '@/utils/',
             'static': '@/static/',
-                                    //这行注释不要动1(webpack)start
- 
-  
+                                           //这行注释不要动1(webpack)start
         
- //这行注释不要动1(webpack)end                        
+ //这行注释不要动1(webpack)end                               
         }
     }
 };
