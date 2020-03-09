@@ -33,6 +33,9 @@ module.exports = {
       "import/no-unresolved": 0,
       "import/no-dynamic-require": 0,
       "import/extensions": 0, // 关闭使用扩展
-      "vue/html-indent": ["error", 4],
+      "import/order": 0,
+      "import/newline-after-import": 0,
+      "vue/html-indent": 0,
+      "vue/html-closing-bracket-newline": 0,
     },
 }

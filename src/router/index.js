@@ -14,10 +14,14 @@ siblings = siblings.concat(baseRoutes.siblings || []);
 /* eslint-disable spaced-comment, no-trailing-spaces, indent,no-unused-vars,
 import/no-unresolved,import/first,import/order    */
 import translate from "utils/translate";
-                    //这行注释不要动(router)start
+                                 //这行注释不要动(router)start
  
+import studyProjectRoutes from "@study/router";
+translate.translateRouter("study", studyProjectRoutes);
+children = children.concat(studyProjectRoutes.children || []);
+siblings = siblings.concat(studyProjectRoutes.siblings || []);
         
-//这行注释不要动(router)end                    
+ //这行注释不要动(router)end                                 
 /* eslint-enable spaced-comment, no-trailing-spaces, indent,no-unused-vars,
 import/no-unresolved,import/first,import/order   */
 routes = routes.concat([{ path: "/", component: home, children }])

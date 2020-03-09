@@ -90,11 +90,15 @@ for (key in foo) {
 _translateStore
 正确:
 innerTranslateStore
-### 
+### object-shorthand
 错误:
-
+export default new Router({
+    routes: routes,
+});
 正确:
-
+export default new Router({
+    routes,
+});
 ### 
 错误:
 

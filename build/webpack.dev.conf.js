@@ -14,7 +14,7 @@ if(args.indexOf('--300') != -1) {
 
 let dist = 'dist';
 module.exports = merge(common, {
-    devtool: 'inline-source-map',
+    //devtool: 'inline-source-map',
     devServer: {
         historyApiFallback: true,
         disableHostCheck: true,

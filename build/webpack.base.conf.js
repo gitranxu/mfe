@@ -124,9 +124,17 @@ module.exports = {
             'pages': '@/pages/',
             'utils': '@/utils/',
             'static': '@/static/',
-                                           //这行注释不要动1(webpack)start
+           //这行注释不要动1(webpack)start
+ 
+            '@study': 'sub/gld-study/src/',
+            'study-api': '@study/api/',
+            'study-components': '@study/components/',
+            'study-pages': '@study/pages/',
+            'study-static': '@study/static/',
+            'study-utils': '@study/utils/',
+            'study-consts': '@study/consts/',
         
- //这行注释不要动1(webpack)end                               
+ //这行注释不要动1(webpack)end                                            
         }
     }
 };

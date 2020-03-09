@@ -47,8 +47,8 @@ function getWebpackInsertContent() {
 function getRouterInsertContent() {
     return util.subProjectNamesLoop(projectNameNoPrefix => {
         return `
-import ${projectNameNoPrefix}ProjectRoutes from '@${projectNameNoPrefix}/router';
-translate.translateRouter('${projectNameNoPrefix}', ${projectNameNoPrefix}ProjectRoutes);
+import ${projectNameNoPrefix}ProjectRoutes from "@${projectNameNoPrefix}/router";
+translate.translateRouter("${projectNameNoPrefix}", ${projectNameNoPrefix}ProjectRoutes);
 children = children.concat(${projectNameNoPrefix}ProjectRoutes.children || []);
 siblings = siblings.concat(${projectNameNoPrefix}ProjectRoutes.siblings || []);
         `;
@@ -58,8 +58,8 @@ siblings = siblings.concat(${projectNameNoPrefix}ProjectRoutes.siblings || []);
 function getStoreInsertContent1() {
     return util.subProjectNamesLoop(projectNameNoPrefix => {
         return `
-import ${projectNameNoPrefix}State from '@${projectNameNoPrefix}/store';
-translate.translateStore('${projectNameNoPrefix}', ${projectNameNoPrefix}State);
+import ${projectNameNoPrefix}State from "@${projectNameNoPrefix}/store";
+translate.translateStore("${projectNameNoPrefix}", ${projectNameNoPrefix}State);
         `;
     });
 }
