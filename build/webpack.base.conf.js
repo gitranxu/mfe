@@ -40,16 +40,16 @@ module.exports = {
                     }
                 }
             },
-            {
-                enforce: 'pre',
-                test: /\.(js|vue)$/,
-                exclude: /node_modules/,
-                loader: 'eslint-loader',
-                include: [ path.resolve(__dirname, '../src') ], // 指定检查的目录
-                options: { // 这里的配置项参数将会被传递到 eslint 的 CLIEngine 
-                    formatter: require('eslint-friendly-formatter') // 指定错误报告的格式规范
-                }
-            },
+            // {
+            //     enforce: 'pre',
+            //     test: /\.(js|vue)$/,
+            //     exclude: /node_modules/,
+            //     loader: 'eslint-loader',
+            //     include: [ path.resolve(__dirname, '../src') ], // 指定检查的目录
+            //     options: { // 这里的配置项参数将会被传递到 eslint 的 CLIEngine 
+            //         formatter: require('eslint-friendly-formatter') // 指定错误报告的格式规范
+            //     }
+            // },
             {
                 test: /\.js$/,
                 //把对.js 的文件处理交给id为happyBabel 的HappyPack 的实例执行
@@ -124,17 +124,9 @@ module.exports = {
             'pages': '@/pages/',
             'utils': '@/utils/',
             'static': '@/static/',
-           //这行注释不要动1(webpack)start
+            //这行注释不要动1(webpack)start
  
-            '@study': 'sub/gld-study/src/',
-            'study-api': '@study/api/',
-            'study-components': '@study/components/',
-            'study-pages': '@study/pages/',
-            'study-static': '@study/static/',
-            'study-utils': '@study/utils/',
-            'study-consts': '@study/consts/',
-        
- //这行注释不要动1(webpack)end                                            
+ //这行注释不要动1(webpack)end                                             
         }
     }
 };

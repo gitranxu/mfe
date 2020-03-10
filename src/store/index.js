@@ -8,12 +8,9 @@ Vue.use(Vuex);
 /* eslint-disable spaced-comment, no-trailing-spaces, indent,no-unused-vars,
 import/no-unresolved,import/first,import/order    */
 import translate from "utils/translate";
-                             //这行注释不要动1(store)start
+                              //这行注释不要动1(store)start
  
-import studyState from "@study/store";
-translate.translateStore("study", studyState);
-        
- //这行注释不要动1(store)end             
+ //这行注释不要动1(store)end              
 /* eslint-enable spaced-comment, no-trailing-spaces, indent,no-unused-vars,
 import/no-unresolved,import/first,import/order   */
 const store = new Vuex.Store({
@@ -24,10 +21,9 @@ const store = new Vuex.Store({
         userState,
 /* eslint-disable spaced-comment, no-trailing-spaces, indent,no-unused-vars,
 import/no-unresolved,import/first,import/order    */
-                                     //这行注释不要动2(store)start
+                                      //这行注释不要动2(store)start
  
-        ...studyState,
- //这行注释不要动2(store)end             
+ //这行注释不要动2(store)end              
         /* eslint-enable spaced-comment, no-trailing-spaces, indent,no-unused-vars,
 import/no-unresolved,import/first,import/order   */
     },

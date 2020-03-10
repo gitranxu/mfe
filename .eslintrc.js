@@ -37,5 +37,11 @@ module.exports = {
       "import/newline-after-import": 0,
       "vue/html-indent": 0,
       "vue/html-closing-bracket-newline": 0,
+      "vue/html-self-closing": 0,
+      "vue/multiline-html-element-content-newline": 0,
+      "arrow-body-style": 0,
+      "no-else-return": 0,
+      "no-plusplus": 0,
+      //"vue/max-attributes-per-line": 0,
     },
 }
