@@ -55,7 +55,7 @@
     "@riophae/vue-treeselect": "^0.4.0",
     "ant-design-vue": "^1.4.x",
     "axios": "^0.18.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "vue": "^2.6.x",
     "vue-cookie": "^1.1.4",
     "vue-grid-layout": "^2.3.7",
